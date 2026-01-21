@@ -1,0 +1,217 @@
+:root {
+    --kitty-pink: #ffb7c5;
+    --kuromi-purple: #2c003e;
+    --kuromi-accent: #b162cf;
+    --white: #ffffff;
+    --envelope-color: #f0f0f0;
+    --kitty-border: #ff4d6d;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--kitty-pink); /* Fundo base (a parte de cima) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; /* Necessário para posicionar a onda */
+}
+
+/* --- ONDA INFERIOR ROXA --- */
+.bottom-wave {
+    position: absolute;
+    bottom: 60;
+    left: 0;
+    width: 100%;
+    height: 105%; /* Ajuste a altura para subir ou descer a onda */
+    background-color: var(--kuromi-purple);
+    z-index: 1; /* Fica atrás do envelope */
+    /* Cria a forma de onda com clip-path */
+    clip-path: ellipse(90% 50% at 50% 90%); /* Ajuste esses valores para mudar a "barriga" da onda */
+}
+
+
+/* --- ENVELOPE --- */
+.envelope-wrapper {
+    position: relative;
+    cursor: pointer;
+    animation: flutuarSuave 3s ease-in-out infinite;
+    z-index: 10; /* Garante que o envelope fique sobre a onda */
+}
+
+.envelope {
+    position: relative;
+    width: 280px;
+    height: 180px;
+    background: var(--envelope-color);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    overflow: hidden; 
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-top: 110px solid #e0e0e0;
+    transform-origin: top;
+    transition: transform 0.6s ease;
+    z-index: 5;
+}
+
+.envelope::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 140px solid var(--envelope-color);
+    border-right: 140px solid var(--envelope-color);
+    border-top: 100px solid transparent;
+    border-bottom: 90px solid #e8e8e8;
+    z-index: 4;
+}
+
+/* CARTA */
+.letter-preview {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    height: 160px;
+    background: var(--white);
+    border: 3px solid var(--kitty-pink);
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    color: var(--kitty-border);
+    font-family: 'Comic Sans MS', sans-serif;
+    z-index: 2;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.titulo-carta { margin: 0; font-size: 16px; font-weight: bold; }
+.mensagem-texto { font-size: 13px; line-height: 1.2; color: #444; margin: 5px 0; }
+
+/* ESTADO ABERTO */
+.envelope.open { overflow: visible; }
+.envelope.open::before { transform: rotateX(180deg); z-index: 1; }
+.envelope.open .letter-preview { transform: translateY(-130px); z-index: 6; }
+
+/* SELO */
+.heart-sticker {
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    z-index: 6;
+    transition: opacity 0.3s;
+}
+.heart-sticker::after { content: "❤️"; }
+.envelope.open .heart-sticker { opacity: 0; }
+
+/* --- SEÇÃO DE ADESIVOS (STICKERS) --- */
+.sticker {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10;
+    filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px -2px 0 white) drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+    transition: transform 0.3s ease;
+}
+
+.sticker:hover { transform: scale(1.1) rotate(0deg); }
+
+.sticker-foto {
+    width: 90px;
+    height: 90px;
+    left: -15px;
+    bottom: 20px;
+    transform: rotate(-12deg);
+    background-image: url('https://cdn.discordapp.com/attachments/1365431048741326941/1463190658251755721/file_00000000d188720ea12eaf13482d6393.png?ex=69723f7d&is=6970edfd&hm=95a8e264ef2337681eb97c544fb0b9dfd1a5909e735fd7adac33655f09895703&');
+}
+
+.sticker-extra-1 {
+    width: 40px;
+    height: 40px;
+    top: 40px;
+    right: 10px;
+    transform: rotate(15deg);
+    background-image: url('https://cdn.discordapp.com/attachments/1365431048741326941/1463190670591135840/file_00000000d218720e8ca98f5325503c10.png?ex=69723f80&is=6970ee00&hm=603c4abd0f8c0aa400a8133f9467b2dcab66388b794f4c3b4b8028784bb58fd0&');
+}
+
+.sticker-extra-2 {
+    width: 35px;
+    height: 35px;
+    bottom: 15px;
+    right: 20px;
+    transform: rotate(-10deg);
+    background-image: url('https://cdn.discordapp.com/attachments/1365431048741326941/1463593987515351247/1769018380577.png?ex=6972659e&is=6971141e&hm=7fa843c0045ace9b83c45b0d1e680b0751235304202a30d6513d8e3bd7f89540&');
+}
+
+.sticker-extra-3 {
+  width: 45px;
+  height: 50px;
+  bottom: 35px;
+  left: 70px;
+  transform: rotate(-15deg);
+  background-image: url('https://cdn.discordapp.com/attachments/1365431048741326941/1463606918504513760/1769021471698.png?ex=697271a9&is=69712029&hm=47b2dd3b57f7ae8e64d5bd14efee615591d3c9b6ee93304a89190c25116545d7&');
+}
+
+/* ANIMAÇÕES */
+@keyframes flutuarSuave {
+    0%, 100% { transform: translateY(0px); filter: drop-shadow(0 15px 10px rgba(0,0,0,0.2)); }
+    50% { transform: translateY(-25px); filter: drop-shadow(0 40px 20px rgba(0,0,0,0.1)); }
+}
+
+.bow { font-size: 20px; }
+.linhas-decorativas {
+    margin: 5px auto;
+    width: 80%;
+    height: 20px;
+    background: repeating-linear-gradient(to bottom, transparent, transparent 5px, var(--kitty-pink) 6px);
+    opacity: 0.2;
+}
+
+.stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2; /* Fica atrás do envelope, mas na frente do fundo */
+}
+
+.star {
+    position: absolute;
+    /* Adiciona a bordinha branca para parecer adesivo */
+    filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px -2px 0 white);
+    /* Faz elas ficarem pulsando suavemente no fundo */
+    animation: piscar 3s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+@keyframes piscar {
+    0%, 100% { 
+        opacity: 0.4; 
+        transform: scale(0.9) rotate(0deg); 
+    }
+    50% { 
+        opacity: 0.8; 
+        transform: scale(1.1) rotate(10deg); 
+    }
+}

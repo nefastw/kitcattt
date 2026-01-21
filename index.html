@@ -1,63 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
+  <link rel="icon" type="image x-icon" href="https://cdn.discordapp.com/attachments/1448831843595063358/1463605206045692061/1769020982557.png?ex=69727011&is=69711e91&hm=f08355a422989aaeec863724671b0b482a211262b5e7b61815a9eff0c10bd11d&">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Meu Amor</title>
-    <style>
-        body {
-            background-color: #fff5f5;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #4a4a4a;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-        }
-        .header {
-            margin-top: 50px;
-            animation: fadeIn 2s;
-        }
-        h1 { color: #d63384; font-size: 2.5em; }
-        
-        .counter {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            display: inline-block;
-            margin: 20px 0;
-        }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    </style>
+    <title>Pra você bruxa...</title>
+    <link rel="stylesheet" border="0" href="style.css">
 </head>
 <body>
 
-    <div class="header">
-        <h1>Para a pessoa mais especial... ❤️</h1>
-        <p>Cada segundo ao seu lado é um presente.</p>
-    </div>
-
-    <div class="counter">
-        <h2 id="timer">Carregando nosso tempo...</h2>
-        <p>de pura felicidade!</p>
-    </div>
-
-    <p style="margin-top: 30px;">"Você é a minha melhor escolha."</p>
-
-    <script>
-      
-        const dataInicio = new Date(2025, 19, 12); 
-
-        function atualizarContador() {
-            const agora = new Date();
-            const diferenca = agora - dataInicio;
+    <div class="envelope-wrapper" onclick="abrirEnvelope()">
+        <div class="envelope" id="meuEnvelope">
             
-            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-            document.getElementById('timer').innerText = dias + " dias juntos";
-        }
-        setInterval(atualizarContador, 1000);
-        atualizarContador();
-    </script>
+            <div class="sticker sticker-foto"></div>    
+            <div class="sticker sticker-extra-1"></div> 
+            <div class="sticker sticker-extra-2"></div> 
+            <div class="sticker sticker-extra-3"></div> 
+            <div class="heart-sticker"></div>
+            
+            <div class="letter-preview">
+                <div class="bow">🎀</div>
+                <p class="titulo-carta">Cattt</p>
+                <div class="mensagem-texto">
+                    Desde o dia que se conhecemos, Você foi mudando minha vida, melhorou ela..<br>
+                    Você é está cada vez mais virando a pessoa mais importante na minha vida, por motivos óbvios, Você passa tempo comigo, Você me ajuda, conversa e me eneina coisas novas sempre<br>
+                </div>
+                <div class="linhas-decorativas"></div>
+            </div>
+
+        </div> 
+    </div> 
+
+<div class="stars-container">
+    <img src="https://cdn.discordapp.com/attachments/1365431048741326941/1463606361135906856/1769021332765.png?ex=69727124&is=69711fa4&hm=360b80fdfd059a74c070b98d0a022710e89cf91bbd034e6809d70ffc9fec32f6&" class="star" style="top: 10%; left: 15%; width: 40px;">
+    <img src="https://cdn.discordapp.com/attachments/1448831843595063358/1463605206045692061/1769020982557.png?ex=69727011&is=69711e91&hm=f08355a422989aaeec863724671b0b482a211262b5e7b61815a9eff0c10bd11d&" class="star" style="top: 25%; left: 75%; width: 35px;">
+    <img src="https://cdn.discordapp.com/attachments/1448831843595063358/1463605206443884737/1769021012252.png?ex=69727011&is=69711e91&hm=294dccc605b8e90ee719c88c038c888c86c3cbd5f9af198684e0ed53449fd4a3&" class="star" style="top: 65%; left: 10%; width: 45px;">
+    <img src="https://cdn.discordapp.com/attachments/1365431048741326941/1463606361135906856/1769021332765.png?ex=69727124&is=69711fa4&hm=360b80fdfd059a74c070b98d0a022710e89cf91bbd034e6809d70ffc9fec32f6&" class="star" style="top: 80%; left: 85%; width: 38px;">
+    <img src="https://cdn.discordapp.com/attachments/1365431048741326941/1463606918504513760/1769021471698.png?ex=697271a9&is=69712029&hm=47b2dd3b57f7ae8e64d5bd14efee615591d3c9b6ee93304a89190c25116545d7&" class="star" style="top: 15%; left: 55%; width: 30px;">
+</div>
+
+    <div class="bottom-wave"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
