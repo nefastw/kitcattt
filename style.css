@@ -33,15 +33,6 @@ body {
     clip-path: ellipse(90% 50% at 50% 90%); /* Ajuste esses valores para mudar a "barriga" da onda */
 }
 
-
-/* --- ENVELOPE --- */
-.envelope-wrapper {
-    position: relative;
-    cursor: pointer;
-    animation: flutuarSuave 3s ease-in-out infinite;
-    z-index: 10; /* Garante que o envelope fique sobre a onda */
-}
-
 .envelope {
     position: relative;
     width: 280px;
