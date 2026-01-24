@@ -141,7 +141,7 @@ body {
     left: -15px;
     bottom: 20px;
     transform: rotate(-12deg);
-    background-image: url('https://cdn.discordapp.com/attachments/1365431048741326941/1463190658251755721/file_00000000d188720ea12eaf13482d6393.png?ex=697390fd&is=69723f7d&hm=74b5fe3495f05e48fdf5748563306d9f33bfd27166ef0eb801a15c6e998cc2be');
+    background-image: url('image/malandra.png');
 }
 
 .sticker-extra-1 {
@@ -150,7 +150,7 @@ body {
     top: 40px;
     right: 10px;
     transform: rotate(15deg);
-    background-image: url('https://cdn.discordapp.com/attachments/1365431048741326941/1463190670591135840/file_00000000d218720e8ca98f5325503c10.png?ex=69723f80&is=6970ee00&hm=603c4abd0f8c0aa400a8133f9467b2dcab66388b794f4c3b4b8028784bb58fd0&');
+    background-image: url('image/fofa2.png');
 }
 
 .sticker-extra-2 {
@@ -159,7 +159,7 @@ body {
     bottom: 15px;
     right: 20px;
     transform: rotate(-10deg);
-    background-image: url('https://cdn.discordapp.com/attachments/1365431048741326941/1463593987515351247/1769018380577.png?ex=6972659e&is=6971141e&hm=7fa843c0045ace9b83c45b0d1e680b0751235304202a30d6513d8e3bd7f89540&');
+    background-image: url('image/fofa.png');
 }
 
 .sticker-extra-3 {
@@ -168,7 +168,7 @@ body {
   bottom: 35px;
   left: 70px;
   transform: rotate(-15deg);
-  background-image: url('https://cdn.discordapp.com/attachments/1365431048741326941/1463606918504513760/1769021471698.png?ex=697271a9&is=69712029&hm=47b2dd3b57f7ae8e64d5bd14efee615591d3c9b6ee93304a89190c25116545d7&');
+  background-image: url('image/cavera.png');
 }
 
 /* ANIMAÇÕES */

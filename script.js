@@ -64,10 +64,10 @@ audio.onended = function() {
 // --- LÓGICA DAS PARTÍCULAS (CHUVA DE ÍCONES) ---
 function criarParticula() {
     const imagensPersonagens = [
-        'https://cdn.discordapp.com/attachments/1448831843595063358/1463605206045692061/1769020982557.png?ex=69727011&is=69711e91&hm=f08355a422989aaeec863724671b0b482a211262b5e7b61815a9eff0c10bd11d&',
-        'https://cdn.discordapp.com/attachments/1448831843595063358/1463605206443884737/1769021012252.png?ex=69727011&is=69711e91&hm=294dccc605b8e90ee719c88c038c888c86c3cbd5f9af198684e0ed53449fd4a3&',
-        'https://cdn.discordapp.com/attachments/1365431048741326941/1463606361135906856/1769021332765.png?ex=69727124&is=69711fa4&hm=360b80fdfd059a74c070b98d0a022710e89cf91bbd034e6809d70ffc9fec32f6&',
-        'https://cdn.discordapp.com/attachments/1365431048741326941/1463606918504513760/1769021471698.png?ex=697271a9&is=69712029&hm=47b2dd3b57f7ae8e64d5bd14efee615591d3c9b6ee93304a89190c25116545d7&'
+        'image/favicon.png',
+        'image/laco.png',
+        'image/cabeca.png',
+        'image/cavera.png'
     ];
 
     const particula = document.createElement('img');
