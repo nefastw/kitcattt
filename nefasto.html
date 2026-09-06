@@ -1,131 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./pages/satella/satella.css" />
-    <!-- Medieval style font for the Satella theme -->
+    <title>Nefasto</title>
+
+    <!-- Fonte estilo medieval / personalizada -->
     <link
       href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"
       rel="stylesheet"
     />
-    <title>Satella</title>
+
+    <!-- Arquivo CSS dedicado desta página -->
+    <link rel="stylesheet" href="nefasto.css" />
   </head>
-  <body class="satella">
-    <!-- Custom logic and particles library for background effects -->
-    <script src="./pages/satella/js/index_satella.js" type="module" ></script>
+  <body class="nefasto">
+    <!-- Scripts de efeitos e partículas -->
+    <script src="nefasto.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-      <!-- Main container: avatar + name + social links -->
-      <main>
-        <div class="socials">
-          <!-- Animated avatar (gif) and username -->
-          <div class="center">
+    <!-- Container principal: Avatar + Nome + Redes Sociais -->
+    <main>
+      <div class="socials">
+        <!-- Foto de perfil (GIF/PNG) e nome -->
+        <div class="center">
+          <img
+            class="avatar-nefasto"
+            src="image/icon_nefasto.gif"
+            alt="Icone Nefasto"
+          />
+          <p class="username">Nefasto</p>
+        </div>
+
+        <!-- Links das Redes Sociais -->
+        <div class="link">
+          <a href="https://steamcommunity.com/id/Fonsicreus/" target="_blank">
             <img
-              class="satella"
-              src="./pages/satella/images/icon_satella.gif"
-              alt="Icon"
+              class="link-image"
+              src="image/icon_steam.png"
+              alt="Steam"
             />
-            <p class="username">サテラ</p>
-          </div>
-
-          <!-- Clickable icons: Steam, X (Twitter), Discord -->
-          <div class="link">
-            <a href="https://steamcommunity.com/id/Fonsicreus/" target="_blank">
-              <img
-                class="link-image"
-                src="./pages/satella/images/icon_steam.png"
-                alt="Icon"
-              />
-            </a>
-            <a href="https://x.com/Fonsicreus" target="_blank">
-              <img
-                class="link-image"
-                src="./pages/satella/images/icon_x.jpg"
-                alt="Icon"
-              />
-            </a>
-            <a href="https://discord.gg/Aje9WwjpRu" target="_blank">
-              <img
-                class="link-image"
-                src="./pages/satella/images/icon_discord.png"
-                alt="Icon"
-              />
-            </a>
-          </div>
+          </a>
+          <a href="https://x.com/Fonsicreus" target="_blank">
+            <img
+              class="link-image"
+              src="image/icon_x.jpg"
+              alt="X"
+            />
+          </a>
+          <a href="https://discord.gg/Aje9WwjpRu" target="_blank">
+            <img
+              class="link-image"
+              src="image/icon_discord.png"
+              alt="Discord"
+            />
+          </a>
         </div>
-      </main>
-
-      <section>
-        <!-- Expandable biography (hidden by default; shown when the arrow is clicked) -->
-        <div class="flex-body-bio" style="display: none">
-          <div class="bio">
-            <ul class="bio-list">
-              <li>This is my first website!</li>
-              <li>I am studying HTML, CSS, and JS.</li>
-              <li>3 years of experience in Blender as an animator.</li>
-              <li>I have studies in computer assembly, maintenance, and networking.</li>
-              <li>My favorite anime are Frieren, Re:Zero, Ookami Kodomo no Ame to Yuki, and Houseki no Kuni.</li>
-              <li><a href="https://myanimelist.net/profile/Fonsicreus" target="_blank" class="soft-link">Here is a link to my MyAnimeList profile if anyone is interested</a></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Arrow that toggles the biography on click (clickOnImage in utilities.js) -->
-      <img
-        class="pull-down-menu"
-        src="./pages/satella/images/icon_arrow.png"
-        alt="Arrow"
-        id="arrow"
-      />
-
-      <!-- Hidden phrases: JS picks them randomly and displays on the page -->
-      <p class="add-text" style="display: none">
-        I'll do anything to make you stay with me...
-      </p>
-      <p class="add-text" style="display: none">
-        You belong to me, no one else...
-      </p>
-      <p class="add-text" style="display: none">
-        I can't live without you, don't you see that?
-      </p>
-      <p class="add-text" style="display: none">
-        Don't you dare to leave me...
-      </p>
-      <p class="add-text" style="display: none">
-        DON'T YOU DARE TO LEAVE ME
-      </p>
-
-      <!-- Link to credits (YouTube video) -->
-      <a
-        href="https://www.youtube.com/watch?v=5XJAiHD8rXQ"
-        class="credits"
-        target="_blank"
-        >CREDITS</a
-      >
-
-      <!-- Background music loop (controlled by utilities.js) -->
-      <audio class="musicplayer" id="background-audio" loop>
-        <source src="./pages/satella/audio/background_satella.mp3" type="audio/mp3" />
-        Your browser does not support the audio element.
-      </audio>
-
-      <!-- Slider to increase/decrease music volume -->
-      <div class="musicplayer">
-        <input
-          type="range"
-          id="custom-volume-slider-satella"
-          min="0"
-          max="100"
-          value="100"
-        />
       </div>
+    </main>
 
-    <!-- Background video loop, muted (audio handled by the <audio> above) -->
+    <!-- Seção de Biografia (expansível via clique na seta) -->
+    <section>
+      <div class="flex-body-bio" style="display: none">
+        <div class="bio">
+          <ul class="bio-list">
+            <li>Bem-vindo ao meu espaço!</li>
+            <li>Estudando desenvolvimento HTML, CSS e JS.</li>
+            <li>3 anos de experiência em animação no Blender.</li>
+            <li>Manutenção de computadores e redes.</li>
+            <li>Animes favoritos: Frieren, Re:Zero, Ookami Kodomo, Houseki no Kuni.</li>
+            <li>
+              <a href="cartinha.html" class="soft-link">
+                Clique aqui para ver a página especial ❤️
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seta para abrir/fechar a biografia -->
+    <img
+      class="pull-down-menu"
+      src="image/icon_arrow.png"
+      alt="Seta"
+      id="arrow"
+    />
+
+    <!-- Frases aleatórias exibidas pelo JavaScript -->
+    <p class="add-text" style="display: none">Sua primeira frase marcante aqui...</p>
+    <p class="add-text" style="display: none">Sua segunda frase aqui...</p>
+    <p class="add-text" style="display: none">Sua terceira frase aqui...</p>
+
+    <!-- Créditos / Rodapé -->
+    <a
+      href="https://www.youtube.com/watch?v=5XJAiHD8rXQ"
+      class="credits"
+      target="_blank"
+      >CREDITS</a
+    >
+
+    <!-- Música de Fundo (MP3) -->
+    <audio class="musicplayer" id="background-audio" loop>
+      <source src="audio/background_nefasto.mp3" type="audio/mp3" />
+      Seu navegador não suporta áudio HTML5.
+    </audio>
+
+    <!-- Controle de Volume -->
+    <div class="musicplayer">
+      <input
+        type="range"
+        id="custom-volume-slider-nefasto"
+        min="0"
+        max="100"
+        value="100"
+      />
+    </div>
+
+    <!-- Vídeo de Fundo Muteado (MP4) -->
     <video loop muted class="background-video">
-      <source src="./pages/satella/video/background_satella.mp4" type="video/mp4" />
-      Your browser does not support the video element.
+      <source src="video/background_nefasto.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeo HTML5.
     </video>
   </body>
 </html>
