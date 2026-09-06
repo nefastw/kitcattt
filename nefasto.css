@@ -1,371 +1,126 @@
-/*
- * Nefasto profile page styles
- */
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nefasto</title>
 
-/* Variáveis para controle de cores e sombras */ 
-:root {
-  --nefasto-shadow-color: rgba(72, 40, 105, 0.451);
-  --nefasto-transparent-background-color: rgba(0, 0, 0, 0.45); 
-}
+    <!-- Fonte estilo medieval / personalizada -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"
+      rel="stylesheet"
+    />
 
-/* Click to enter */
-.click-to-enter {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  z-index: 100;
-  cursor: pointer;
-  font-family: "MedievalSharp", serif;
-}
+    <!-- Arquivo CSS dedicado desta página -->
+    <link rel="stylesheet" href="nefasto.css" />
+  </head>
+  <body class="nefasto">
+    <!-- Scripts de efeitos e partículas -->
+    <script src="nefasto.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-.click-to-enter.fade-out {
-  opacity: 0;
-}
+    <!-- Container principal: Avatar + Nome + Redes Sociais -->
+    <main>
+      <div class="socials">
+        <!-- Foto de perfil (GIF/PNG) e nome -->
+        <div class="center">
+          <img
+            class="avatar-nefasto"
+            src="image/icon_nefasto.gif"
+            alt="Icone Nefasto"
+          />
+          <p class="username">Nefasto</p>
+        </div>
 
-.click-text {
-  animation: to-the-front 1s ease-in-out 1;
-}
+        <!-- Links das Redes Sociais -->
+        <div class="link">
+          <a href="https://steamcommunity.com/id/Fonsicreus/" target="_blank">
+            <img
+              class="link-image"
+              src="image/icon_steam.png"
+              alt="Steam"
+            />
+          </a>
+          <a href="https://x.com/Fonsicreus" target="_blank">
+            <img
+              class="link-image"
+              src="image/icon_x.jpg"
+              alt="X"
+            />
+          </a>
+          <a href="https://discord.gg/Aje9WwjpRu" target="_blank">
+            <img
+              class="link-image"
+              src="image/icon_discord.png"
+              alt="Discord"
+            />
+          </a>
+        </div>
+      </div>
+    </main>
 
-.credits {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  color: white;
-  font-family: "MedievalSharp", serif;
-  font-size: 1.2rem;
-  text-decoration: none;
-  background-color: rgba(49, 0, 113, 0.6);
-  padding: 5px 10px;
-  border-radius: 5px;
-  z-index: 101;
-  animation: to-the-front 1s ease-in-out 1;
-}
+    <!-- Seção de Biografia (expansível via clique na seta) -->
+    <section>
+      <div class="flex-body-bio" style="display: none">
+        <div class="bio">
+          <ul class="bio-list">
+            <li>Bem-vindo ao meu espaço!</li>
+            <li>Estudando desenvolvimento HTML, CSS e JS.</li>
+            <li>3 anos de experiência em animação no Blender.</li>
+            <li>Manutenção de computadores e redes.</li>
+            <li>Animes favoritos: Frieren, Re:Zero, Ookami Kodomo, Houseki no Kuni.</li>
+            <li>
+              <a href="cartinha.html" class="soft-link">
+                Clique aqui para ver a página especial ❤️
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-.credits.fade-to-the-right {
-  animation: fade-to-the-right 2s ease-in-out forwards;
-}
+    <!-- Seta para abrir/fechar a biografia -->
+    <img
+      class="pull-down-menu"
+      src="image/icon_arrow.png"
+      alt="Seta"
+      id="arrow"
+    />
 
-.credits:hover {
-  background-color: var(--nefasto-shadow-color);
-  color: rgb(147, 112, 219);
-}
+    <!-- Frases aleatórias exibidas pelo JavaScript -->
+    <p class="add-text" style="display: none">Sua primeira frase marcante aqui...</p>
+    <p class="add-text" style="display: none">Sua segunda frase aqui...</p>
+    <p class="add-text" style="display: none">Sua terceira frase aqui...</p>
 
-/* Body */
-body.nefasto {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 0;
-  height: 100vh;
-}
+    <!-- Créditos / Rodapé -->
+    <a
+      href="https://www.youtube.com/watch?v=5XJAiHD8rXQ"
+      class="credits"
+      target="_blank"
+      >CREDITS</a
+    >
 
-.background-video {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
+    <!-- Música de Fundo (MP3) -->
+    <audio class="musicplayer" id="background-audio" loop>
+      <source src="audio/background_nefasto.mp3" type="audio/mp3" />
+      Seu navegador não suporta áudio HTML5.
+    </audio>
 
-/* Container central */
-.center {
-  display: flex;
-  margin-top: 10vh;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--nefasto-transparent-background-color);
-  border-radius: 100px;
-  box-shadow: 0px 0px 10px 10px var(--nefasto-shadow-color);
-  animation: center 4.5s ease-in-out infinite;
-}
+    <!-- Controle de Volume -->
+    <div class="musicplayer">
+      <input
+        type="range"
+        id="custom-volume-slider-nefasto"
+        min="0"
+        max="100"
+        value="100"
+      />
+    </div>
 
-/* Imagem de perfil */
-.avatar-nefasto {
-  width: 100%;
-  max-width: 120px;
-  margin-left: 40px;
-  margin-right: 40px;
-  z-index: 100;
-  border-radius: 50%;
-  object-fit: cover;
-  aspect-ratio: 1 / 1;
-  box-shadow: 0px 0px 10px 10px var(--nefasto-shadow-color);
-}
-
-/* Nome de usuário */
-.username {
-  font-size: 3em;
-  color: white;
-  font-weight: bold;
-  padding-right: 65px;
-  width: 25vh;
-  height: 10vh;
-}
-
-/* Links sociais */
-.link {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  animation: center 4.5s ease-in-out infinite;
-  padding-top: 2vh;
-}
-
-.link-image {
-  width: 100%;
-  max-width: 50px;
-  border-radius: 100%;
-  object-fit: cover;
-  aspect-ratio: 1 / 1;
-  box-shadow: 0px 0px 10px 10px rgba(49, 0, 113, 0.45);
-  border: 2px solid var(--nefasto-shadow-color);
-}
-
-/* Biografia */
-.flex-body-bio {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.bio {
-  background-color: var(--nefasto-transparent-background-color);
-  padding: 24px 40px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 10px 10px var(--nefasto-shadow-color);
-  animation: center 4.5s ease-in-out infinite;
-  max-width: 80vw;
-  width: min(700px, 90%);
-}
-
-.bio-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.bio-list li {
-  text-align: left;
-  margin: 5px 0;
-  padding: 10px;
-  border-radius: 5px;
-  font-family: "MedievalSharp", serif;
-  font-size: 1.2em;
-  color: rgb(240, 240, 240);
-}
-
-.soft-link {
-  color: rgb(147, 112, 219);
-  text-decoration: none;
-}
-
-.soft-link:hover {
-  color: rgb(200, 170, 255);
-  text-decoration: underline;
-}
-
-/* Seta menu */
-.pull-down-menu {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  max-width: 120px;
-  cursor: pointer;
-  border-radius: 100px;
-  box-shadow: 0px 0px 10px 10px var(--nefasto-shadow-color);
-  border: 2px solid var(--nefasto-shadow-color);
-  background-color: rgba(49, 0, 113, 0.5);
-  transition: all 0.5s ease-in-out;
-}
-
-/* Player de música */
-.musicplayer {
-  position: fixed;
-  bottom: 7%;
-  right: -2%;
-  width: max-content;
-  border-radius: 100px;
-  box-shadow: 0px 0px 10px 15px var(--nefasto-shadow-color);
-  transform: rotate(-90deg);
-  transform-origin: center;
-  background-color: rgba(49, 0, 113, 0.5);
-}
-
-/* Controle de volume customizado */
-#custom-volume-slider-nefasto {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 100%;
-  background: transparent;
-}
-
-#custom-volume-slider-nefasto::-webkit-slider-runnable-track {
-  height: 10px;
-  background: linear-gradient(
-    to right,
-    rgba(72, 40, 105, 0.8),
-    rgba(147, 112, 219, 0.5)
-  );
-  border-radius: 5px;
-}
-
-#custom-volume-slider-nefasto::-webkit-slider-thumb {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  background: rgb(75, 0, 130);
-  border: 2px solid rgb(117, 71, 209);
-  border-radius: 50%;
-  margin-top: -5px;
-  cursor: pointer;
-}
-
-#custom-volume-slider-nefasto::-webkit-slider-thumb:hover {
-  transform: scale(1.5);
-  box-shadow: 0 0 12px rgba(72, 40, 105, 0.45);
-}
-
-/* Animações */
-@keyframes to-the-front {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes center {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes erase {
-  from { width: 100%; }
-  to { width: 0; }
-}
-
-@keyframes fade-to-the-right {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vw);
-    opacity: 0;
-  }
-}
-
-@keyframes fade-to-the-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-250%); }
-}
-
-@keyframes fade-from-the-right {
-  0% { transform: translateX(250%); }
-  100% { transform: translateX(0%); }
-}
-
-/* Utilitários */
-#particles-js {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-#username-particles-js {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 90;
-}
-
-.typewriter-text {
-  font-size: 12px;
-  color: white;
-  font-family: "MedievalSharp", serif;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: solid white;
-  animation:
-    typing 4.5s steps(48) forwards,
-    erase 3s steps(48) 6s forwards;
-  padding-left: 10px;
-}
-
-.fade-to-the-left {
-  animation: fade-to-the-left 1s forwards ease-in;
-}
-
-.fade-from-the-right {
-  animation: fade-from-the-right 1s forwards ease-out;
-}
-
-/* Responsividade */
-@media screen and (max-width: 1000px) {
-  .pull-down-menu {
-    top: 75%;
-    right: 12px;
-    max-width: 90px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .bio {
-    width: 400px;
-    padding: 10px;
-  }
-
-  .pull-down-menu {
-    top: 85%;
-  }
-
-  .username {
-    padding: 0;
-    padding-right: 10px;
-    width: 100%;
-  }
-
-  .typewriter-text {
-    display: none;
-  }
-
-  .avatar-nefasto {
-    margin: 20px;
-  }
-}
-
-@media screen and (max-height: 800px) {
-  .pull-down-menu {
-    top: 90%;
-  }
-}
+    <!-- Vídeo de Fundo Muteado (MP4) -->
+    <video loop muted class="background-video">
+      <source src="video/background_nefasto.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+  </body>
+</html>
